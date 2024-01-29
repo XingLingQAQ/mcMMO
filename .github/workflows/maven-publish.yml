@@ -27,7 +27,7 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: put jar
-    - run: mkdir staging && cp target/*.jar staging
+      run: mkdir staging && cp target/*.jar staging
 # 上传文件并发布 Release
     - name: upload release
     - uses: "marvinpinto/action-automatic-releases@latest"
