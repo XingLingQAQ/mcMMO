@@ -23,11 +23,9 @@ jobs:
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
   
-# Maven 打包 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-# 将打包好的 Jar 包 放到 staging 文件夹
     - name: put jar
     - run: mkdir staging && cp target/*.jar staging
 # 上传文件并发布 Release
